@@ -1,0 +1,24 @@
+##################################################
+# Syntax Coloring Map For JAF_EscControllerLib
+##################################################
+# Class
+##################################################
+
+JAF_EscControllerLib	KEYWORD1	
+
+##################################################
+# Methods and Functions 
+##################################################	
+
+init	KEYWORD2
+arm		KEYWORD2
+writeMicrosec	KEYWORD2
+writeRelativeOuput	KEYWORD2
+setLimits	KEYWORD2
+
+##################################################
+# Constants
+##################################################
+ 
+# JOYSTICK_BASE	LITERAL1
+
