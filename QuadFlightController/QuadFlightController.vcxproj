@@ -44,10 +44,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\standard;E:\!GitHub\DroneProject\QuadFlightController;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\cklx4axv.kpm\Micro Platforms\default\debuggers;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;C:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;C:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>C:\Users\johnf\Documents\Arduino\QuadFlightController\__vm\.QuadFlightController.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;F_CPU=16000000L;ARDUINO=10605;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src\utility;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers\VM_DBG;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;C:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;C:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>E:\!GitHub\DroneProject\QuadFlightController\__vm\.QuadFlightController.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>__AVR_ATmega2560__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=106012;ARDUINO_AVR_MEGA2560;ARDUINO_ARCH_AVR;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -73,7 +73,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\_micro-api\libraries\JAF_Razor9DOFLib\src\JAF_Razor9DOFLib.h" />
+    <ClInclude Include="src\_micro-api\libraries\JAF_UltrasonicLib\src\JAF_UltrasonicLib.h" />
     <ClInclude Include="__vm\.QuadFlightController.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\_micro-api\libraries\JAF_Razor9DOFLib\src\JAF_Razor9DOFLib.cpp" />
+    <ClCompile Include="src\_micro-api\libraries\JAF_UltrasonicLib\src\JAF_UltrasonicLib.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
