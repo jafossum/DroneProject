@@ -44,7 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src\utility;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers\VM_DBG;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;C:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;C:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_EscControllerLib\src;C:\Program Files (x86)\Arduino\libraries\Servo\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_FrequencySchedulerLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_PIDLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_WatchdogLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_EscControllerLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_FrequencySchedulerLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_PIDLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src\utility;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_WatchdogLib\src\utility;C:\Program Files (x86)\Arduino\libraries\Servo\src\utility;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_EscControllerLib\src;C:\Program Files (x86)\Arduino\libraries\Servo\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_FrequencySchedulerLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_PIDLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_Razor9DOFLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_UltrasonicLib\src;E:\!GitHub\DroneProject\QuadFlightController\src\_micro-api\libraries\JAF_WatchdogLib\src;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers\VM_DBG;C:\Program Files (x86)\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\nnjndhzc.bkt\Micro Platforms\default\debuggers;C:\Users\johnf\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;C:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;C:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>E:\!GitHub\DroneProject\QuadFlightController\__vm\.QuadFlightController.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega2560__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=106012;ARDUINO_AVR_MEGA2560;ARDUINO_ARCH_AVR;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -73,13 +73,34 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="QuadFlightMain.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\checksum.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\JAF_QuadProject\JAF_QuadProject.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\JAF_QuadProject\mavlink.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\JAF_QuadProject\mavlink_msg_heartbeat.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\JAF_QuadProject\testsuite.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\JAF_QuadProject\version.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\mavlink_conversions.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\mavlink_helpers.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\mavlink_types.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink\protocol.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink_bridge_header.h" />
+    <ClInclude Include="src\JAF_MavLink\mavlink_receive.h" />
+    <ClInclude Include="src\_micro-api\libraries\JAF_EscControllerLib\src\JAF_EscControllerLib.h" />
+    <ClInclude Include="src\_micro-api\libraries\JAF_FrequencySchedulerLib\src\JAF_FrequencySchedulerLib.h" />
+    <ClInclude Include="src\_micro-api\libraries\JAF_PIDLib\src\JAF_PIDLib.h" />
     <ClInclude Include="src\_micro-api\libraries\JAF_Razor9DOFLib\src\JAF_Razor9DOFLib.h" />
     <ClInclude Include="src\_micro-api\libraries\JAF_UltrasonicLib\src\JAF_UltrasonicLib.h" />
+    <ClInclude Include="src\_micro-api\libraries\JAF_WatchdogLib\src\JAF_WatchdogLib.h" />
     <ClInclude Include="__vm\.QuadFlightController.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\_micro-api\libraries\JAF_EscControllerLib\src\JAF_EscControllerLib.cpp" />
+    <ClCompile Include="src\_micro-api\libraries\JAF_FrequencySchedulerLib\src\JAF_FrequencySchedulerLib.cpp" />
+    <ClCompile Include="src\_micro-api\libraries\JAF_PIDLib\src\JAF_PIDLib.cpp" />
     <ClCompile Include="src\_micro-api\libraries\JAF_Razor9DOFLib\src\JAF_Razor9DOFLib.cpp" />
     <ClCompile Include="src\_micro-api\libraries\JAF_UltrasonicLib\src\JAF_UltrasonicLib.cpp" />
+    <ClCompile Include="src\_micro-api\libraries\JAF_WatchdogLib\src\JAF_WatchdogLib.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
