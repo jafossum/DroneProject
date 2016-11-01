@@ -11,7 +11,6 @@
 #include <Servo.h>
 
 #define AFROESC30
-#define DEBUG
 
 #ifdef AFROESC30
 #define MINLIMIT 1100
