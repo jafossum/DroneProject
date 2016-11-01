@@ -14,6 +14,7 @@ Editor:	http://www.visualmicro.com
 #include "WProgram.h"
 #endif
 
+
 /* Frequency Scheduler takes in a lest (array) of struct Task to keep track of.
 Also uses Loop Frequency together with Tick to validate if tasks should run.
 
@@ -64,6 +65,9 @@ private:
 
 	// The actual tick counter
 	uint16_t _tickCounter;
+
+	// Debug Serial
+	HardwareSerial* _debug_serial;
 };
 
 #endif

@@ -14,8 +14,6 @@
 	#include "WProgram.h"
 #endif
 
-#define RAZOR_BAUDRATE 57600;
-
 class JAF_Razor9DOF
 {
 

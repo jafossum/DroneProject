@@ -5,10 +5,9 @@ Author:	JohnF
 Editor:	http://www.visualmicro.com
 */
 
-#include "src/JAF_FrequencySchedulerLib.h"
+#include "JAF_FrequencySchedulerLib.h"
 
 void BlinkToggle();
-void StupidPrint();
 
 #pragma region DefineScheduler
 
@@ -49,7 +48,7 @@ void setup() {
 	Serial.begin(115200);
 
 	// Initialize the scheduler
-	scheduler.init(ScheduledTasks, sizeof(ScheduledTasks));
+	scheduler.init(ScheduledTasks, sizeof(ScheduledTasks);
 
 	// Time delay in Micros
 	timeDelay = 1000000 / FREQUENCY;

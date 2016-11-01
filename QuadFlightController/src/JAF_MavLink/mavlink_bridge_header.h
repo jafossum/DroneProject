@@ -16,7 +16,6 @@ mavlink_system.compid = 44; // Component/Subsystem ID, 1-255
 
 Lines also in your main.c, e.g. by reading these parameter from EEPROM.
 */
-mavlink_system_t mavlink_system = {66, 44};
 
 /**
 * @brief Send one char (uint8_t) over a comm channel
@@ -28,15 +27,15 @@ static inline void comm_send_ch(mavlink_channel_t chan, uint8_t ch)
 {
 	if (chan == MAVLINK_COMM_0)
 	{
-		Serial.write(ch);
+		xbee_serial.write(ch);
 	}
 	if (chan == MAVLINK_COMM_1)
 	{
-		Serial1.write(ch);
+		debug_serial.write(ch);
 	}
 
 #ifdef DEBUG
-	Serial.print(ch);
+	debug_serial.print(ch);
 #endif
 }
 
