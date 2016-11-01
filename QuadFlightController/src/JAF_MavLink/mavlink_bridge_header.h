@@ -35,7 +35,7 @@ static inline void comm_send_ch(mavlink_channel_t chan, uint8_t ch)
 		Serial1.write(ch);
 	}
 
-#if DEBUG
+#ifdef DEBUG
 	Serial.print(ch);
 #endif
 }
