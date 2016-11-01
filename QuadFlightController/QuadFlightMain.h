@@ -1,3 +1,15 @@
+/*
+Name:		QuadFlightMain.h
+Author:		JohnF
+Editor:		http://www.visualmicro.com
+*/
+
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "arduino.h"
+#else
+#include "WProgram.h"
+#endif
+
 #include <JAF_EscControllerLib.h>
 #include <JAF_FrequencySchedulerLib.h>
 #include <JAF_PIDLib.h>
