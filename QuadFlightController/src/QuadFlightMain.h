@@ -14,9 +14,9 @@ Editor:		http://www.visualmicro.com
 #endif
 
 // Setting names to Serial for easier use
-extern HardwareSerial & xbee_serial;
-extern HardwareSerial & razor_serial;
-extern HardwareSerial & debug_serial;
+extern HardwareSerial & xbeeSerial;
+extern HardwareSerial & razorSerial;
+extern HardwareSerial & debugSerial;
 
 #include <JAF_EscControllerLib.h>
 #include <JAF_FrequencySchedulerLib.h>

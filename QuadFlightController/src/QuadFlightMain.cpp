@@ -12,12 +12,12 @@ void QuadFlightMain::getRazorData(JAF_Razor9DOF *Razor9DOF)
 		this->roll = Razor9DOF->roll;
 
 #ifdef DEBUG
-		debug_serial.print("Yaw: ");
-		debug_serial.print(this->yaw);
-		debug_serial.print("Pitch: ");
-		debug_serial.print(this->pitch);
-		debug_serial.print("Roll: ");
-		debug_serial.println(this->roll);
+		debugSerial.print("Yaw: ");
+		debugSerial.print(this->yaw);
+		debugSerial.print("Pitch: ");
+		debugSerial.print(this->pitch);
+		debugSerial.print("Roll: ");
+		debugSerial.println(this->roll);
 #endif
 	}
 }
@@ -29,8 +29,8 @@ void QuadFlightMain::getUltrasonicData(JAF_UltrasonicLib *Ultrasonic)
 	{
 		this->ultraMeas = Ultrasonic->getRange();
 #ifdef DEBUG
-		debug_serial.print(this->ultraMeas);
-		debug_serial.println("cm");
+		debugSerial.print(this->ultraMeas);
+		debugSerial.println("cm");
 #endif
 	}
 

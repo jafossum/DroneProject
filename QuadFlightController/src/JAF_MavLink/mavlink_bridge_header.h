@@ -27,15 +27,15 @@ static inline void comm_send_ch(mavlink_channel_t chan, uint8_t ch)
 {
 	if (chan == MAVLINK_COMM_0)
 	{
-		xbee_serial.write(ch);
+		xbeeSerial.write(ch);
 	}
 	if (chan == MAVLINK_COMM_1)
 	{
-		debug_serial.write(ch);
+		debugSerial.write(ch);
 	}
 
 #ifdef DEBUG
-	debug_serial.print(ch);
+	debugSerial.print(ch);
 #endif
 }
 

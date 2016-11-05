@@ -46,15 +46,15 @@ void JAF_EscControllerLib::writeMicrosec(uint16_t micros)
 		this->writeMicroseconds((int)constrain(micros, MINLIMIT, MAXLIMIT));
 
 #ifdef DEBUG
-		debug_serial.print("OutPut micros: ");
-		debug_serial.println(constrain(micros, MINLIMIT, MAXLIMIT));
+		debugSerial.print("OutPut micros: ");
+		debugSerial.println(constrain(micros, MINLIMIT, MAXLIMIT));
 #endif
 	}
 
 	else
 	{
 #ifdef DEBUG
-		debug_serial.print("OutPut NOT POSSIBLE. DEVICE NOT ARMED");
+		debugSerial.print("OutPut NOT POSSIBLE. DEVICE NOT ARMED");
 #endif
 	}
 
@@ -71,14 +71,14 @@ void JAF_EscControllerLib::writeRelativeOuput(uint8_t output)
 		this->writeMicroseconds((int)map(output, 0, 100, MINLIMIT, MAXLIMIT));
 
 #ifdef DEBUG
-		debug_serial.print("Actual OutPut: ");
-		debug_serial.println((int)map(output, 0, 100, MINLIMIT, MAXLIMIT));
+		debugSerial.print("Actual OutPut: ");
+		debugSerial.println((int)map(output, 0, 100, MINLIMIT, MAXLIMIT));
 #endif
 	}
 
 	else {
 #ifdef DEBUG
-		debug_serial.print("OutPut NOT POSSIBLE. DEVICE NOT ARMED");
+		debugSerial.print("OutPut NOT POSSIBLE. DEVICE NOT ARMED");
 #endif
 	}
 

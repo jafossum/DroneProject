@@ -18,26 +18,26 @@ class JAF_Razor9DOF
 {
 
 private:
-	void _setup_razor();
-	float _read_float_from_serial();
+	void _setupRazor();
+	float _readFloatFromSerial();
 
-	bool _debug_available = false;
+	bool _debugAvailable = false;
 
-	union byte_to_float {
+	union byteToFloat {
 		byte b[4];
 		float fval;
-	} _byte_to_float;
+	} _byteToFloat;
 	
-	HardwareSerial* _razor_serial;
-	HardwareSerial* _debug_serial;
+	HardwareSerial* _razorSerial;
+	HardwareSerial* _debugSerial;
 
 
 public:
 	JAF_Razor9DOF();
 
-	void init(HardwareSerial* razor_serial, HardwareSerial* debug_serial);
-	void init(HardwareSerial* razor_serial);
-	void reset_razor();
+	void init(HardwareSerial* razorSerial, HardwareSerial* debugSerial);
+	void init(HardwareSerial* razorSerial);
+	void resetRazor();
 	void update();
 
 	bool updated = false;

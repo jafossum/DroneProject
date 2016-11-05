@@ -67,7 +67,7 @@ private:
 	uint16_t _tickCounter;
 
 	// Debug Serial
-	HardwareSerial* _debug_serial;
+	HardwareSerial* _debugSerial;
 };
 
 #endif

@@ -10,9 +10,9 @@ Editor:		http://www.visualmicro.com
 User Variable Area
 */
 
-HardwareSerial & xbee_serial = Serial;
-HardwareSerial & razor_serial = Serial1;
-HardwareSerial & debug_serial = Serial2;
+HardwareSerial & xbeeSerial = Serial;
+HardwareSerial & razorSerial = Serial1;
+HardwareSerial & debugSerial = Serial2;
 
 // Setting MAVLINK SysId and CompId here for some strange reasonb wich I dont yet understand
 mavlink_system_t mavlink_system = { 66, 44 };
@@ -56,9 +56,9 @@ JAF_FrequencySchedulerLib scheduler;
 void setup()
 {
 	// Setting up Serials
-	xbee_serial.begin(57600);
-	debug_serial.begin(57600);
-	razor_serial.begin(57600);
+	xbeeSerial.begin(57600);
+	debugSerial.begin(57600);
+	razorSerial.begin(57600);
 
 	// Initializing scheduler
 	scheduler.init(ScheduledTasks, sizeof(ScheduledTasks));
@@ -66,7 +66,7 @@ void setup()
 	timeDelay = 1000000 / FREQUENCY;
 
 	// Initializing 9DOF Razor
-	Razor9DOF.init(&razor_serial, &debug_serial);
+	Razor9DOF.init(&razorSerial, &debugSerial);
 
 	// Initializing Ultrasonic
 	Ultrasonic.init();
@@ -90,13 +90,13 @@ void loop()
 
 	if (timeLeft > timeDelay){
 #ifdef DEBUG
-		debug_serial.print("This was not good!!");
+		debugSerial.print("This was not good!!");
 #endif
 	}
 	else{
 #ifdef DEBUG
-		debug_serial.print("TimeLeft: ");
-		debug_serial.println(timeLeft);
+		debugSerial.print("TimeLeft: ");
+		debugSerial.println(timeLeft);
 #endif //DEBUG
 
 		// wait for the amount of time that is left to keep the Hz stable
@@ -133,14 +133,14 @@ void getUltrasonicData()
 // Toggle the PIN 13 Diode to see that code is running
 void BlinkToggle()
 {
-	debug_serial.println("Actually setting LED");
+	debugSerial.println("Actually setting LED");
 
 }
 
 // Doing nothing other that print to verify run
 void StupidPrint()
 {
-	debug_serial.println("Setting stupid print");
+	debugSerial.println("Setting stupid print");
 }
 
 #pragma endregion

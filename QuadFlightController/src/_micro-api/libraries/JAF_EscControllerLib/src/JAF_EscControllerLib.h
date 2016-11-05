@@ -29,7 +29,7 @@ public:
 	JAF_EscControllerLib();
 
 	void init(uint8_t pinNumber);
-	void init(uint8_t pinNumber, HardwareSerial *debug_serial);
+	void init(uint8_t pinNumber, HardwareSerial *debugSerial);
 	void arm();
 	void writeMicrosec(uint16_t Micros);
 	void writeRelativeOuput(uint8_t output);
