@@ -10,17 +10,36 @@ Editor:		http://www.visualmicro.com
 User Variable Area
 */
 
-HardwareSerial & xbeeSerial = Serial;
+#pragma region Definitions
+
+// Setting Serials
+HardwareSerial & debugSerial = Serial;
 HardwareSerial & razorSerial = Serial1;
-HardwareSerial & debugSerial = Serial2;
+HardwareSerial & xbeeSerial = Serial2;
 
 // Setting MAVLINK SysId and CompId here for some strange reasonb wich I dont yet understand
 mavlink_system_t mavlink_system = { 66, 44 };
 
+// Setting Quad main methods
 QuadFlightMain Quad;
 
+// Defining Razor instance
 JAF_Razor9DOF Razor9DOF;
+
+// Defining Ultrasonic instance
 JAF_UltrasonicLib Ultrasonic(200);
+
+// Defining ESC Controllers and outputs
+JAF_EscControllerLib Esc_1;
+JAF_EscControllerLib Esc_2;
+JAF_EscControllerLib Esc_3;
+JAF_EscControllerLib Esc_4;
+
+// Defining PIDs
+JAF_PIDLib PidYaw;
+JAF_PIDLib PidPitch;
+JAF_PIDLib PidRoll;
+JAF_PIDLib PidAltitude;
 
 #pragma endregion
 
@@ -28,9 +47,6 @@ void getRazorData();
 void getUltrasonicData();
 
 #pragma region DefineScheduler
-
-// Set expected Frequency here
-#define FREQUENCY 400
 
 unsigned long timeStart;
 static double timeDelay;
@@ -67,9 +83,33 @@ void setup()
 
 	// Initializing 9DOF Razor
 	Razor9DOF.init(&razorSerial, &debugSerial);
+	debugSerial.println("Razor INIT done...");
 
 	// Initializing Ultrasonic
 	Ultrasonic.init();
+	debugSerial.println("Ultrazonic INIT done...");
+
+	// Initializa ESCs
+	Esc_1.init(ESC_PIN_1); 
+	Esc_2.init(ESC_PIN_2); 
+	Esc_3.init(ESC_PIN_3); 
+	Esc_4.init(ESC_PIN_4);
+	debugSerial.println("ESC 1-2-3-4 INIT done...");
+
+	// Initialize PIDs
+	PidYaw.init(&Quad.KpYaw, &Quad.TiYaw, &Quad.TdYaw);
+	PidYaw.setSaturation(MINLIMIT, MAXLIMIT);
+
+	PidPitch.init(&Quad.KpPitch, &Quad.TiPitch, &Quad.TdPitch);
+	PidPitch.setSaturation(MINLIMIT, MAXLIMIT);
+
+	PidRoll.init(&Quad.KpRoll, &Quad.TiRoll, &Quad.TdRoll);
+	PidRoll.setSaturation(MINLIMIT, MAXLIMIT);
+
+	PidAltitude.init(&Quad.KpAltitude, &Quad.TiAltitude, &Quad.TdAltitude);
+	PidAltitude.setSaturation(MINLIMIT, MAXLIMIT);
+	debugSerial.println("PID Yaw, Pitch, Rol, Altitude INIT done...");
+
 }
 #pragma endregion
 

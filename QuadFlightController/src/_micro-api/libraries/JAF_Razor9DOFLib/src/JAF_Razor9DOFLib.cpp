@@ -56,7 +56,7 @@ void JAF_Razor9DOF::resetRazor()
 
 void JAF_Razor9DOF::update()
 {
-	updated = true;
+	updated = false;
 
 	// Read angles from serial port
 	if (_razorSerial->available() >= 12)

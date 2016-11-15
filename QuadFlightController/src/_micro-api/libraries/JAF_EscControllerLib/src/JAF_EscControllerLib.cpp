@@ -16,7 +16,6 @@ JAF_EscControllerLib::JAF_EscControllerLib(){}
 
 (micros)minLimit = 0% output
 (micros)maxLimit = 100% output */
-
 void JAF_EscControllerLib::init(uint8_t pinNumber)
 {
 #ifndef MINLIMIT
@@ -24,6 +23,7 @@ void JAF_EscControllerLib::init(uint8_t pinNumber)
 	while(1);
 #endif
 	this->attach((int)pinNumber, MINLIMIT, MAXLIMIT);
+	this->writeMicrosec(0);
 }
 
 // Arm the ESC. Sets signal so low the ESC can be armed
@@ -44,11 +44,6 @@ void JAF_EscControllerLib::writeMicrosec(uint16_t micros)
 	{
 		// Write PWN to uotput pin
 		this->writeMicroseconds((int)constrain(micros, MINLIMIT, MAXLIMIT));
-
-#ifdef DEBUG
-		debugSerial.print("OutPut micros: ");
-		debugSerial.println(constrain(micros, MINLIMIT, MAXLIMIT));
-#endif
 	}
 
 	else
@@ -69,11 +64,6 @@ void JAF_EscControllerLib::writeRelativeOuput(uint8_t output)
 	if (_armed) {
 	// Write PWM to uotput pin
 		this->writeMicroseconds((int)map(output, 0, 100, MINLIMIT, MAXLIMIT));
-
-#ifdef DEBUG
-		debugSerial.print("Actual OutPut: ");
-		debugSerial.println((int)map(output, 0, 100, MINLIMIT, MAXLIMIT));
-#endif
 	}
 
 	else {

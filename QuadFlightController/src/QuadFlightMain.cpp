@@ -5,6 +5,8 @@
 // Reads Razor data
 void QuadFlightMain::getRazorData(JAF_Razor9DOF *Razor9DOF)
 {
+	Razor9DOF->update();
+
 	if (Razor9DOF->updated)
 	{
 		this->yaw = Razor9DOF->yaw;
@@ -19,6 +21,10 @@ void QuadFlightMain::getRazorData(JAF_Razor9DOF *Razor9DOF)
 		debugSerial.print("Roll: ");
 		debugSerial.println(this->roll);
 #endif
+	}
+	else
+	{
+		debugSerial.println("Razor Angles NOT updated");
 	}
 }
 
